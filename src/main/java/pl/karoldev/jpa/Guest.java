@@ -9,22 +9,22 @@ import jakarta.persistence.Id;
 public class Guest {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long id;
-    private String nanme;
+    private String name;
     private int age;
 
+    Guest() {
 
-    public Guest(String nanme, int age) {
-        this.nanme = nanme;
+    }
+
+    public Guest(String name, int age) {
+        this.name = name;
         this.age = age;
     }
 
-    public long getId() {
-        return this.id;
-    }
-
-    public void setAge(int newAge) {
-        this.age = newAge;
+    @Override
+    public String toString() {
+        return name;
     }
 }
